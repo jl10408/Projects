@@ -1,7 +1,7 @@
 // Joshua Ligon
 
 public class Main {
-    public static void main(String[] args) {
+    public static void First(String[] args) {
         System.out.println("Hola mundo");
         System.out.println("Job Title: Information Security Analyst");
         System.out.println("This job has a growth projection of 33% (Great outlook)");
