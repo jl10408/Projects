@@ -1,28 +1,67 @@
-public class Pet {
-    private String name;
+import java.util.Scanner;
 
+public class Pet {
+    private String name; // Pet's name
+    private String type; // Pet's type
+    private int age; // Pet's age
+
+    // Default constructor
     public Pet() {
         setName("Pet Name");
+        setType("Animal");
+        setAge(1);
     }
 
+    // Custom constructor
+    public Pet(String name, String type, int age) {
+        setName(name);
+        setType(type);
+        setAge(age);
+    }
+
+    // Setters
     public void setName(String name) {
-        this.name = name;
+        this.name = name; // Set name
+    }
+    
+    public void setType(String type) {
+        this.type = type; // Set type
+    }
+    
+    public void setAge(int age) {
+        this.age = age; // Set age
     }
 
+    // Getters
     public String getName() {
-        return name;
+        return name; // Get name
+    }
+    
+    public String getType() {
+        return type; // Get type
+    }
+    
+    public int getAge() {
+        return age; // Get age
     }
 
+    // Speak method
+    public String speak() {
+        if (type.equalsIgnoreCase("dog")) {
+            return "Woof"; // Dog sound
+        } else if (type.equalsIgnoreCase("cat")) {
+            return "Meow"; // Cat sound
+        } else {
+            return "Yowl"; // Default sound
+        }
+    }
+
+    // toString method
     public String toString() {
-        return "Pet information:\nName: " + name;
-    }
-
-    public static void main(String[] args) {
-        Pet pet1 = new Pet();
-        System.out.println(pet1);
-
-        Pet pet2 = new Pet();
-        pet2.setName("Buster");
-        System.out.println("\n" + pet2);
+        return "Pet information:\n" +
+               "Type: " + type + "\n" +
+               "Name: " + name + "\n" +
+               "Sound: " + speak() + "\n" +
+               "Age: " + age; // All details
     }
 }
