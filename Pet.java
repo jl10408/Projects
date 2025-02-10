@@ -56,7 +56,7 @@ public class Pet {
         }
     }
 
-    // toString method
+    // tostring
     public String toString() {
         return "Pet information:\n" +
                "Type: " + type + "\n" +
