@@ -12,7 +12,7 @@ public class Pet {
         setAge(1);
     }
 
-    // Custom constructor
+    // Custom constructorws
     public Pet(String name, String type, int age) {
         setName(name);
         setType(type);
