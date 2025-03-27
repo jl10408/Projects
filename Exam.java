@@ -1,4 +1,4 @@
-public class Exam extends Assessment {
+public class Exam extends Assessment implements Graded {
     private int numQuestions;
     private int numMissed;
 
@@ -16,4 +16,14 @@ public class Exam extends Assessment {
     public int getPointsEach() {
         return 100 / numQuestions;
     }
+
+    //edit
+    @Override
+    public char getLetterGrade() {
+        return getGrade();
+    }
+}
+
+interface Graded {
+    char getLetterGrade();
 }
