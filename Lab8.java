@@ -14,15 +14,15 @@ public class Lab8 {
             String line;
             DecimalFormat df = new DecimalFormat("$#,##0.00");
 
-            // Write column headers to the output file
+            // Writeing columns 
             writer.write("Name,Pay Rate,Hours Worked,Weekly Pay");
             writer.newLine();
 
-            // Read each line from the input file
+            // Reading each line from the input file
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
 
-                // Skip lines that don't have enough data
+                // Skiping lines that don't have enough data
                 if (parts.length < 3) continue;
 
                 String name = parts[0];
@@ -31,7 +31,7 @@ public class Lab8 {
 
                 double weeklyPay = 0.0;
 
-                // Calculate weekly pay, including overtime if over 40 hours
+                // Calculating weekly pay, including overtime if over 40 hours
                 if ((hoursWorked > 40)) {
                     double overtime = hoursWorked - 40;
                     weeklyPay = (40 * payRate) + (overtime * payRate * 1.5);
@@ -39,7 +39,7 @@ public class Lab8 {
                     weeklyPay = hoursWorked * payRate;
                 }
 
-                // Write the line to the output file with formatted pay
+                // Writing the line to the output file with formatted pay
                 String outputLine = name + "," + payRate + "," + hoursWorked + "," + df.format(weeklyPay);
                 writer.write(outputLine);
                 writer.newLine();
